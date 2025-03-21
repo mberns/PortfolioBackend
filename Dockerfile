@@ -1,5 +1,5 @@
 #de que imagen partimos
-ROM amazoncorretto:17-alpine-jdk 
+FROM amazoncorretto:17-alpine-jdk 
 
 #quien es el dueño
 MAINTAINER MartinaBerns 
