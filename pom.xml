@@ -104,25 +104,8 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            
             <version>3.17.0</version>
-            
         </dependency>
-
-        <!--
-        <dependency>
-            <groupId>ch.epfl.tyqu</groupId>
-            <artifactId>tyqu_3</artifactId>
-            <version>0.1.0</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.codeslap</groupId>
-            <artifactId>persistence</artifactId>
-            <version>0.9.24</version>
-            <type>jar</type>
-        </dependency>
-                -->
     </dependencies>
 
     <build>
