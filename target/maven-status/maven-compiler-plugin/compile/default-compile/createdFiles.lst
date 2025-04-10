@@ -1,3 +1,4 @@
+com\portfolio\martina_b\controlador\CHardAndSoftSkills.class
 com\portfolio\martina_b\Security\Dto\LoginUsuario.class
 com\portfolio\martina_b\Security\Dto\NuevoUsuario.class
 com\portfolio\martina_b\controlador\PersonaControlador.class
@@ -5,10 +6,12 @@ com\portfolio\martina_b\Security\Service\UsuarioService.class
 com\portfolio\martina_b\repositorio\IPersonaRepositorio.class
 com\portfolio\martina_b\Security\Service\UserDetailsImplements.class
 com\portfolio\martina_b\Security\Repository\IUsuarioRepositorio.class
+com\portfolio\martina_b\entidad\HardAndSoftSkills.class
 com\portfolio\martina_b\Security\jwt\JwtProvider.class
 com\portfolio\martina_b\controlador\CExperiencia.class
 com\portfolio\martina_b\repositorio\REducacion.class
 com\portfolio\martina_b\servicio\SEducacion.class
+com\portfolio\martina_b\servicio\SHardAndSoftSkills.class
 com\portfolio\martina_b\entidad\Experiencia.class
 com\portfolio\martina_b\Security\Controller\Mensaje.class
 com\portfolio\martina_b\Security\MainSecurity.class
@@ -18,7 +21,9 @@ com\portfolio\martina_b\Security\jwt\JwtEntryPoint.class
 com\portfolio\martina_b\servicio\SExperiencia.class
 com\portfolio\martina_b\Dto\DtoEducacion.class
 com\portfolio\martina_b\servicio\ImpPersonaServicio.class
+com\portfolio\martina_b\Dto\DtoHardAndSoftSkills.class
 com\portfolio\martina_b\Security\Service\RolService.class
+com\portfolio\martina_b\repositorio\RHardAndSoftSkills.class
 com\portfolio\martina_b\Security\Controller\AuthController.class
 com\portfolio\martina_b\entidad\Educacion.class
 com\portfolio\martina_b\Security\Entity\Usuario.class
