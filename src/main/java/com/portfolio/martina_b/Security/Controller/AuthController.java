@@ -12,6 +12,7 @@ import com.portfolio.martina_b.Security.Service.UsuarioService;
 import com.portfolio.martina_b.Security.jwt.JwtProvider;
 import jakarta.validation.Valid;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -61,12 +62,34 @@ public class AuthController {
         Set<Rol> roles = new HashSet<>();
         roles.add(rolService.getByRolNombre(RolNombre.ROLE_USER).get());
         
+        Optional<Rol> userRole = rolService.getByRolNombre(RolNombre.ROLE_USER);
+        if (userRole.isPresent()) {
+            roles.add(userRole.get());
+        } else {
+            return new ResponseEntity(new Mensaje("No existe el rol USER en la base de datos"), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        
         //todos van a ser usuario salvo que sean admin
+        /*
         if(nuevoUsuario.getRoles().contains("admin"))
             roles.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
         usuario.setRoles(roles);
         usuarioService.save(usuario);
+        */
+        if (nuevoUsuario.getRoles().contains("admin")) {
+            Optional<Rol> adminRole = rolService.getByRolNombre(RolNombre.ROLE_ADMIN);
+            if (adminRole.isPresent()) {
+                roles.add(adminRole.get());
+            } else {
+                return new ResponseEntity(new Mensaje("No existe el rol ADMIN en la base de datos"), HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        }
+
+        usuario.setRoles(roles);
+        usuarioService.save(usuario);
+
         
+
         return new ResponseEntity(new Mensaje("Usuario guardado"), HttpStatus.CREATED);
     }
     
