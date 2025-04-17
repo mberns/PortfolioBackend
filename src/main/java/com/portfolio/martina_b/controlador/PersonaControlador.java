@@ -63,6 +63,6 @@ public class PersonaControlador {
     
     @GetMapping("personas/traer/perfil")
     public Persona findPersona(){
-        return IpersonaServicio.findPersona(3L); //Long.MIN_VALUE
+        return IpersonaServicio.findPersona(1L); //Long.MIN_VALUE
     }
 }
