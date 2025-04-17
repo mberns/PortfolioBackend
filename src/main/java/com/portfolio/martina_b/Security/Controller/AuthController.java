@@ -62,6 +62,7 @@ public class AuthController {
         Set<Rol> roles = new HashSet<>();
         roles.add(rolService.getByRolNombre(RolNombre.ROLE_USER).get());
         
+        //nuevo -> no anda
         Optional<Rol> userRole = rolService.getByRolNombre(RolNombre.ROLE_USER);
         if (userRole.isPresent()) {
             roles.add(userRole.get());
@@ -69,13 +70,15 @@ public class AuthController {
             return new ResponseEntity(new Mensaje("No existe el rol USER en la base de datos"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
         
-        //todos van a ser usuario salvo que sean admin
+        //todos van a ser usuario salvo que sean admin -> viejo -> andaba
         /*
         if(nuevoUsuario.getRoles().contains("admin"))
             roles.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
         usuario.setRoles(roles);
         usuarioService.save(usuario);
         */
+        
+        //Nuevo -> no anda
         if (nuevoUsuario.getRoles().contains("admin")) {
             Optional<Rol> adminRole = rolService.getByRolNombre(RolNombre.ROLE_ADMIN);
             if (adminRole.isPresent()) {
